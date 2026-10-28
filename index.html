@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GateBase · GATE 2029 Mission Control</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234F46E5'/%3E%3Cpath d='M32 16 10 26l22 10 18-8.2V40h4V26L32 16z' fill='%23fff'/%3E%3Cpath d='M20 34.5V42c0 3.3 5.4 7 12 7s12-3.7 12-7v-7.5l-12 5.4-12-5.4z' fill='%23C7D2FE'/%3E%3C/svg%3E">
+<script>
+/* apply saved theme before first paint (no flash) */
+(function(){try{
+  var t=localStorage.getItem("gatebase-theme");
+  if(!t){t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}
+  if(t==="dark")document.documentElement.classList.add("dark");
+}catch(e){}})();
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 64 64" width="22" height="22"><path d="M32 16 10 26l22 10 18-8.2V40h4V26L32 16z" fill="currentColor"/><path d="M20 34.5V42c0 3.3 5.4 7 12 7s12-3.7 12-7v-7.5l-12 5.4-12-5.4z" fill="currentColor" opacity=".45"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">GateBase</div>
+        <div class="brand-sub">GATE 2029 · 2030</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-foot">
+      <button class="btn btn-primary btn-block" onclick="GH.chat.go()"><span class="btn-ic" id="chatBtnIcon"></span>AI Coach</button>
+      <div class="sidebar-meta">
+        <button class="meta-btn" onclick="GH.theme.toggle()" aria-label="Toggle dark mode"><span class="meta-ic" id="themeIcon"></span></button>
+        <button class="meta-btn" onclick="GH.openSettings()">Settings</button>
+        <span class="ver">v2.6</span>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="GH.toggleSidebar(false)"></div>
+
+  <main class="main">
+    <div class="topbar">
+      <button class="btn-icon" onclick="GH.toggleSidebar()" aria-label="Menu"><span id="menuIcon"></span></button>
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      <div class="net-pill" id="netPill"></div>
+      <button class="btn-icon" onclick="GH.theme.toggle()" aria-label="Toggle dark mode"><span id="themeIcon2"></span></button>
+    </div>
+    <div class="content" id="view"></div>
+  </main>
+</div>
+
+<button class="fab" id="fab" onclick="GH.chat.go()" aria-label="AI Coach"><span id="fabIcon"></span></button>
+
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="GH.closeDrawer()"></div>
+<aside class="drawer" id="drawer"></aside>
+
+<div class="quiz-wrap" id="quizWrap"><div class="quiz-card" id="quizCard"></div></div>
+
+<div class="modal-wrap" id="modalWrap" onclick="if(event.target===this)GH.closeModal()"><div class="modal" id="modal"></div></div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data-core.js"></script>
+<script src="js/data-analysis.js"></script>
+<script src="js/data-plan.js"></script>
+<script src="js/data-opps.js"></script>
+<script src="js/data-route500.js"></script>
+<script src="js/data-jntuh.js"></script>
+<script src="js/data-questions.js"></script>
+<script src="js/data-questions2.js"></script>
+<script src="js/app.js"></script>
+<script src="js/views-roadmap.js"></script>
+<script src="js/views-route500.js"></script>
+<script src="js/views-jntuh.js"></script>
+<script src="js/views-study.js"></script>
+<script src="js/views-pyq.js"></script>
+<script src="js/views-tracks.js"></script>
+<script src="js/views-resources.js"></script>
+<script src="js/views-progress.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/llm.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/views-ai.js"></script>
+<script>GH.init();</script>
+</body>
+</html>
